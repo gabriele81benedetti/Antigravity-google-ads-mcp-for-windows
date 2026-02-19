@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Credenziali (IMPORTANTISSIMO)
+google-ads.yaml
+client_secrets.json
+
+# File di configurazione locali
+.env
+.gemini/
+
+# Report e dati (Evitiamo di caricare dati sensibili dei clienti)
+*.json
+*.csv
+!pyproject.toml
+!uv.lock
+
+# Sistema
+.DS_Store
+Thumbs.db

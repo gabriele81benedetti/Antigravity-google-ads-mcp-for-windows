@@ -1,0 +1,12 @@
+# Sostituisci i valori sottostanti con le tue credenziali Google Ads
+# Rinomina questo file in 'google-ads.yaml' per utilizzarlo
+
+developer_token: "INSERISCI_QUI_IL_TUO_DEVELOPER_TOKEN"
+client_id: "INSERISCI_QUI_IL_TUO_CLIENT_ID"
+client_secret: "INSERISCI_QUI_IL_TUO_CLIENT_SECRET"
+refresh_token: "INSERISCI_QUI_IL_TUO_REFRESH_TOKEN"
+
+# Opzionale: l'ID dell'account manager (MCC) sotto cui operano gli account cliente
+# login_customer_id: "1234567890"
+
+use_proto_plus: True
