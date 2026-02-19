@@ -14,6 +14,12 @@ If you are using Antigravity on Windows, we have included an automatic workflow:
 3. Open that specific folder in Antigravity/Cursor.
 4. **Type `/setup-mcp-windows` in the AI Chat window** (NOT in the system terminal/PowerShell).
 
+### 🆘 Troubleshooting the `/setup` command
+If your agent says the command does not exist:
+*   **Check Hidden Folders**: Ensure the `.agent` folder exists in your directory. On Windows, folders starting with a dot might be hidden.
+*   **Folder Level**: Make sure you opened the folder that *contains* the `ads_mcp` and `.agent` folders, not a parent folder.
+*   **Reserved Names**: Do not place this project inside a folder named `.antigravity`. Use a neutral path like `C:\Projects\google_ads`.
+
 > [!WARNING]
 > Do not type this command in the terminal. It must be typed in the Antigravity chat interaction box.
 
@@ -100,6 +106,12 @@ Se usi Antigravity e sei su Windows, abbiamo incluso un workflow automatico:
 2. **Estrai il file ZIP** in una cartella a tua scelta sul tuo PC (es. `C:\Progetti\google_ads_mcp`).
 3. Apri quella specifica cartella in Antigravity/Cursor.
 4. **Digita `/setup-mcp-windows` nella finestra della Chat AI** (NON nel terminale di sistema/PowerShell).
+
+### 🆘 Risoluzione problemi comando `/setup`
+Se l'agente dice che il comando non esiste:
+*   **Cartelle Nascoste**: Assicurati che la cartella `.agent` esista. Su Windows, i file che iniziano con un punto potrebbero essere nascosti.
+*   **Livello Cartella**: Assicurati di aver aperto la cartella che *contiene* direttamente `ads_mcp` e `.agent`, non una cartella superiore.
+*   **Nomi Riservati**: Non posizionare il progetto dentro una cartella chiamata `.antigravity`. Usa un percorso neutro come `C:\Progetti\google_ads`.
 
 > [!IMPORTANT]
 > Non scrivere questo comando nel terminale. Deve essere digitato nel box di chat con Antigravity.
