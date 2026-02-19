@@ -5,6 +5,7 @@ la guida in italiano si trova dopo la guida in inglese
 # Google Ads MCP Server Core (Windows & Public version)
 
 This repository contains the MCP server to integrate Google Ads with AI agents such as Antigravity or Claude.
+Don't worry if you're a beginner: once you open this folder in Antigravity, you'll be guided step-by-step through an interactive setup process.
 
 ## 🚀 Quick Setup for Windows
 If you are using Antigravity on Windows, we have included an automatic workflow:
@@ -86,6 +87,7 @@ use_proto_plus: True
 # Google Ads MCP Server Core (Version)
 
 Questo repository contiene il server MCP per integrare Google Ads con agenti AI come Antigravity o Claude.
+Non preoccuparti se sei alle prime armi: una volta aperta questa cartella in Antigravity, verrai guidato passo dopo passo da una procedura interattiva.
 
 ## 🚀 Setup Rapido per Windows
 Se usi Antigravity e sei su Windows, abbiamo incluso un workflow automatico:
