@@ -4,14 +4,25 @@ description: Configurazione automatizzata del server MCP Google Ads su sistemi W
 
 Questo workflow guiderà l'utente nella configurazione del server MCP su Windows.
 
-### Fase 1: Verifica Ambiente e Credenziali
-L'agente verifica se si trova su Windows e se i file di configurazione necessari sono presenti.
+### Fase 1: Verifica Ambiente e Guida alle Credenziali
+L'agente verifica se si trova su Windows e aiuta l'utente a configurare le API di Google.
 
 // turbo
-1. Verifica sistema operativo e presenza file credenziali:
-   `powershell -Command "Write-Output 'Sistema:'; $PSVersionTable; Write-Output '---'; Write-Output 'Verifica credenziali:'; Test-Path google-ads.yaml"`
+1. Verifica sistema operativo:
+   `powershell -Command "Write-Output 'Sistema:'; $PSVersionTable"`
 
-*Nota: Se 'Test-Path google-ads.yaml' restituisce False, l'agente deve istruire l'utente a configurare le sue credenziali seguendo il README.*
+2. Verifica presenza file credenziali:
+   `powershell -Command "Test-Path google-ads.yaml"`
+
+3. **SE IL FILE NON ESISTE**, l'agente deve attivare la **Guida Passo-Passo alle Credenziali**:
+   
+   *   **Passaggio A (Google Cloud)**: Chiedi all'utente di andare su [Google Cloud Console](https://console.cloud.google.com/), creare un progetto e abilitare la **Google Ads API**.
+   *   **Passaggio B (OAuth)**: Spiega come configurare la schermata di consenso (User Type: External) e aggiungere la propria email come **Test User** (fondamentale!).
+   *   **Passaggio C (Client Secrets)**: Spiega come creare le credenziali "OAuth Client ID" (Desktop App), scaricare il JSON e rinominarlo in `client_secrets.json` nella cartella attuale.
+   *   **Passaggio D (Developer Token)**: Spiega dove trovarlo nell'account Google Ads (Strumenti -> Centro API).
+   *   **Passaggio E (Refresh Token)**: Una volta caricato `client_secrets.json`, l'agente deve proporre di eseguire lo script:
+     `uv run get_refresh_token.py`
+   *   **Passaggio F (Creazione YAML)**: L'agente raccoglie i dati (Developer Token, Client ID, Secret, Refresh Token) e si offre di creare il file `google-ads.yaml` per l'utente.
 
 ### Fase 2: Pulizia ed Installazione
 Se `uv` non è installato, l'agente deve proporre l'installazione. Deve anche rimuovere residui di macOS.
