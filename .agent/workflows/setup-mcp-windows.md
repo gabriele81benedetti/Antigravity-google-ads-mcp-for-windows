@@ -14,15 +14,23 @@ L'agente verifica se si trova su Windows e aiuta l'utente a configurare le API d
 2. Verifica presenza file credenziali:
    `powershell -Command "Test-Path google-ads.yaml"`
 
-3. **SE IL FILE NON ESISTE**, l'agente deve attivare la **Guida Passo-Passo alle Credenziali**:
+3. **SE IL FILE NON ESISTE**, l'agente DEVE eseguire i seguenti passaggi in ordine:
    
-   *   **Passaggio A (Google Cloud)**: Chiedi all'utente di andare su [Google Cloud Console](https://console.cloud.google.com/), creare un progetto e abilitare la **Google Ads API**.
-   *   **Passaggio B (OAuth)**: Spiega come configurare la schermata di consenso (User Type: External) e aggiungere la propria email come **Test User** (fondamentale!).
-   *   **Passaggio C (Client Secrets)**: Spiega come creare le credenziali "OAuth Client ID" (Desktop App), scaricare il JSON e rinominarlo in `client_secrets.json` nella cartella attuale.
-   *   **Passaggio D (Developer Token)**: Spiega dove trovarlo nell'account Google Ads (Strumenti -> Centro API).
-   *   **Passaggio E (Refresh Token)**: Una volta caricato `client_secrets.json`, l'agente deve proporre di eseguire lo script:
-     `uv run get_refresh_token.py`
-   *   **Passaggio F (Creazione YAML)**: L'agente raccoglie i dati (Developer Token, Client ID, Secret, Refresh Token) e si offre di creare il file `google-ads.yaml` per l'utente.
+   - **Step 3.1**: Chiedi all'utente di fornire il **Developer Token** (si trova nel Centro API di Google Ads).
+   - **Step 3.2**: Chiedi all'utente di fornire il **Client ID** e il **Client Secret** (si trovano nel file `client_secrets.json` scaricato dalla Cloud Console).
+   - **Step 3.3**: Esegui lo script per ottenere il Refresh Token: `uv run get_refresh_token.py`.
+   - **Step 3.4**: Chiedi all'utente il **Refresh Token** generato dallo script sopra.
+   - **Step 3.5**: Chiedi all'utente il **Login Customer ID** (l'ID dell'account MCC, opzionale).
+   - **Step 3.6**: **CREAZIONE FILE**: L'agente deve usare lo strumento `write_to_file` per creare il file `google-ads.yaml` nella cartella corrente con questa struttura:
+
+   ```yaml
+   developer_token: "VALORE_RICEVUTO"
+   client_id: "VALORE_RICEVUTO"
+   client_secret: "VALORE_RICEVUTO"
+   refresh_token: "VALORE_RICEVUTO"
+   login_customer_id: "VALORE_RICEVUTO"
+   use_proto_plus: True
+   ```
 
 ### Fase 2: Pulizia ed Installazione
 Se `uv` non è installato, l'agente deve proporre l'installazione. Deve anche rimuovere residui di macOS.
