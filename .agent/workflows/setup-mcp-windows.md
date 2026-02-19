@@ -14,14 +14,26 @@ L'agente verifica se si trova su Windows e aiuta l'utente a configurare le API d
 2. Verifica presenza file credenziali:
    `powershell -Command "Test-Path google-ads.yaml"`
 
-3. **SE IL FILE NON ESISTE**, l'agente DEVE eseguire i seguenti passaggi in ordine:
+3. **SE IL FILE NON ESISTE**, l'agente DEVE eseguire i seguenti passaggi fornendo le istruzioni esatte:
    
-   - **Step 3.1**: Chiedi all'utente di fornire il **Developer Token** (si trova nel Centro API di Google Ads).
-   - **Step 3.2**: Chiedi all'utente di fornire il **Client ID** e il **Client Secret** (si trovano nel file `client_secrets.json` scaricato dalla Cloud Console).
-   - **Step 3.3**: Esegui lo script per ottenere il Refresh Token: `uv run get_refresh_token.py`.
-   - **Step 3.4**: Chiedi all'utente il **Refresh Token** generato dallo script sopra.
-   - **Step 3.5**: Chiedi all'utente il **Login Customer ID** (l'ID dell'account MCC, opzionale).
-   - **Step 3.6**: **CREAZIONE FILE**: L'agente deve usare lo strumento `write_to_file` per creare il file `google-ads.yaml` nella cartella corrente con questa struttura:
+   - **Step 3.1: Developer Token**
+     *   *Istruzione per l'utente*: "Vai sul tuo account Google Ads Manager (MCC) -> Strumenti e Impostazioni -> Configurazione -> Centro API. Lì troverai il Developer Token (una stringa di caratteri). Copialo e incollalo qui."
+   
+   - **Step 3.2: Client ID & Client Secret**
+     *   *Istruzione per l'utente*: "Vai su [Google Cloud Console](https://console.cloud.google.com/), seleziona il tuo progetto, vai in 'API e Servizi' -> 'Credenziali'. Cerca l'ID client OAuth 2.0 che hai creato (tipo 'Desktop App'). Clicca sull'icona della matita o scarica il JSON per vedere il 'Client ID' e il 'Client Secret'. Incollali qui."
+   
+   - **Step 3.3: Script Refresh Token**
+     *   *Azione*: L'agente informa l'utente: "Adesso lancerò uno script che aprirà il browser per autorizzare l'accesso. Dovrai accedere con l'account Google che gestisce le Ads, cliccare su 'Continua' (anche se dice app non verificata) e copiare il codice che apparirà."
+     *   *Comando*: `uv run get_refresh_token.py` (L'agente deve attendere l'output).
+   
+   - **Step 3.4: Refresh Token**
+     *   *Istruzione per l'utente*: "Copia il 'Refresh Token' che è appena apparso nel terminale qui sopra e incollalo qui."
+   
+   - **Step 3.5: Login Customer ID**
+     *   *Istruzione per l'utente*: "Inserisci l'ID del tuo account Manager (MCC) a 10 cifre senza trattini (es. 1215695365). Se non lo hai, scrivi 'none'."
+
+   - **Step 3.6: CREAZIONE FILE**
+     *   *Azione*: L'agente genera il file `google-ads.yaml` usando i dati raccolti.
 
    ```yaml
    developer_token: "VALORE_RICEVUTO"
