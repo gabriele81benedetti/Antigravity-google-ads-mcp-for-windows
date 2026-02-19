@@ -11,7 +11,7 @@ Don't worry if you're a beginner: once you open this folder in Antigravity, you'
 If you are using Antigravity on Windows, we have included an automatic workflow:
 1. [Download](https://github.com/gabriele81benedetti/Antigravity-google-ads-mcp-for-windows/archive/refs/heads/main.zip) the ZIP file.
 2. **Extract the ZIP file** into a folder of your choice on your PC (e.g., `C:\Projects\google_ads_mcp`).
-3. Open that specific folder in Antigravity/Cursor.
+3. Open that specific folder in Antigravity.
 4. **Type `/setup-mcp-windows` in the AI Chat window** (NOT in the system terminal/PowerShell).
 
 ### 🆘 Troubleshooting the `/setup` command
@@ -104,7 +104,7 @@ Non preoccuparti se sei alle prime armi: una volta aperta questa cartella in Ant
 Se usi Antigravity e sei su Windows, abbiamo incluso un workflow automatico:
 1. [Scarica](https://github.com/gabriele81benedetti/Antigravity-google-ads-mcp-for-windows/archive/refs/heads/main.zip) il file ZIP.
 2. **Estrai il file ZIP** in una cartella a tua scelta sul tuo PC (es. `C:\Progetti\google_ads_mcp`).
-3. Apri quella specifica cartella in Antigravity/Cursor.
+3. Apri quella specifica cartella in Antigravity.
 4. **Digita `/setup-mcp-windows` nella finestra della Chat AI** (NON nel terminale di sistema/PowerShell).
 
 ### 🆘 Risoluzione problemi comando `/setup`
