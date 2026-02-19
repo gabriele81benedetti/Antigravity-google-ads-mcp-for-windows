@@ -83,6 +83,14 @@ use_proto_plus: True
 
 ---
 
+## 🆘 Troubleshooting: "unauthorized_client" Error
+If you get a `RefreshError: unauthorized_client`, check these 3 points:
+1. **OAuth Consent Screen**: Ensure your Google Cloud Project is set to "Testing" and you have **added your email** to the **"Test users"** list.
+2. **Client ID Type**: Ensure you created an OAuth Client ID of type **"Desktop App"**, not "Web Application".
+3. **Consistency**: Check that the `client_id` and `client_secret` in `google-ads.yaml` are EXACTLY the same as those in `client_secrets.json`.
+
+---
+
 ## 🛠️ Requirements
 - [uv](https://astral.sh/uv/) installed on the system.
 - Python 3.10 or higher.
@@ -170,6 +178,14 @@ refresh_token: "IL_TUO_REFRESH_TOKEN"
 login_customer_id: "IL_TUO_MCC_ID" # Facoltativo
 use_proto_plus: True
 ```
+
+---
+
+## 🆘 Risoluzione Problemi: Errore "unauthorized_client"
+Se ricevi l'errore `RefreshError: unauthorized_client`, controlla questi 3 punti:
+1. **Schermata Consenso OAuth**: Assicurati che il progetto Google Cloud sia in stato "Testing" e di aver **aggiunto la tua email** alla lista dei **"Test users"**.
+2. **Tipo Client ID**: Assicurati di aver creato un ID Client OAuth di tipo **"Desktop App"** (Applicazione Desktop), non "Web Application".
+3. **Coerenza**: Controlla che `client_id` e `client_secret` nel file `google-ads.yaml` siano IDENTICI a quelli presenti nel file `client_secrets.json`.
 
 ---
 

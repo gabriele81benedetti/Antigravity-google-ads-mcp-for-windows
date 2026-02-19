@@ -21,6 +21,7 @@ L'agente verifica se si trova su Windows e aiuta l'utente a configurare le API d
    
    - **Step 3.2: Client ID & Client Secret**
      *   *Istruzione per l'utente*: "Vai su [Google Cloud Console](https://console.cloud.google.com/), seleziona il tuo progetto, vai in 'API e Servizi' -> 'Credenziali'. Cerca l'ID client OAuth 2.0 che hai creato (tipo 'Desktop App'). Clicca sull'icona della matita o scarica il JSON per vedere il 'Client ID' e il 'Client Secret'. Incollali qui."
+     *   *IMPORTANTE*: "Prima di procedere, vai nella sezione **'OAuth consent screen'** e assicurati di aver aggiunto la tua email alla lista dei **'Test users'**. Senza questo passaggio, Google darà errore 'unauthorized_client'."
    
    - **Step 3.3: Script Refresh Token (Interattivo)**
      *   *Azione*: L'agente informa l'utente: "Adesso lancerò lo script. **Si aprirà una finestra del browser**. Dovrai accedere con l'account Google Ads, cliccare su 'Continua' e poi su 'Consenti'. Una volta fatto, torna qui."
