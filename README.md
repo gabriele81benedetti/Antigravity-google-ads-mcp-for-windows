@@ -1,4 +1,4 @@
-la guida in italiano e dopo la guida in inglese
+la guida in italiano si trova dopo la guida in inglese
 
 # English Version
 
@@ -8,7 +8,7 @@ This repository contains the MCP server to integrate Google Ads with AI agents s
 
 ## 🚀 Quick Setup for Windows
 If you are using Antigravity on Windows, we have included an automatic workflow:
-1. Download and open this folder.
+1. [Download](https://github.com/gabriele81benedetti/Antigravity-google-ads-mcp-for-windows/archive/refs/heads/main.zip) and open this folder.
 2. Type `/setup-mcp-windows` in your agent's chat.
 
 ---
@@ -89,7 +89,7 @@ Questo repository contiene il server MCP per integrare Google Ads con agenti AI 
 
 ## 🚀 Setup Rapido per Windows
 Se usi Antigravity e sei su Windows, abbiamo incluso un workflow automatico:
-1. Scarica e apri questa cartella.
+1. [Scarica](https://github.com/gabriele81benedetti/Antigravity-google-ads-mcp-for-windows/archive/refs/heads/main.zip) e apri questa cartella.
 2. Digita `/setup-mcp-windows` nella chat del tuo agente.
 
 ---
