@@ -40,13 +40,17 @@ L'agente deve trovare il percorso assoluto della cartella attuale e generare il 
 4. Ottieni il percorso assoluto della cartella:
    `powershell -Command "(Get-Item .).FullName"`
 
-### Fase 4: Scrittura File di Configurazione
-L'agente deve guidare l'utente a scrivere il file `mcp_config.json` nella cartella corretta di Antigravity su Windows.
+### Fase 4: Scrittura File di Configurazione (NON SOVRASCRIVERE!)
+L'agente deve aggiungere il server Google Ads alla configurazione esistente di Antigravity senza cancellare gli altri server (es. Meta Ads).
 
-5. Identifica il percorso di configurazione di Antigravity:
-   Solitamente è `$HOME\.gemini\antigravity\mcp_config.json`.
+// turbo
+5. Leggi il file di configurazione esistente se presente:
+   `powershell -Command "if (Test-Path $HOME\.gemini\antigravity\mcp_config.json) { Get-Content $HOME\.gemini\antigravity\mcp_config.json } else { Write-Output 'File non trovato' }"`
 
-6. Mostra all'utente il contenuto finale del file JSON, formattato con i percorsi corretti appena rilevati, e chiedi conferma per procedere o istruisci su come incollarlo manualmente.
+6. **OPERAZIONE DI MERGE**: 
+   *   Se il file esiste, l'agente deve **aggiungere** l'oggetto `GoogleAds` all'interno dell'oggetto `mcpServers` già presente.
+   *   Se il file non esiste, crealo da zero.
+   *   **Mostra il risultato finale all'utente** e chiedi conferma prima di salvare, assicurandoti che i server precedenti siano ancora presenti nel testo.
 
 ### Fase 5: Test Finale
 7. Chiedi all'utente di riavviare l'agente e provare il comando: `Riesci a vedere l'mcp GoogleAds?`

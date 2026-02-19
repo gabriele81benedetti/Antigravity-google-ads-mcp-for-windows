@@ -25,29 +25,26 @@ If your agent says the command does not exist:
 
 ---
 
-### 4. Configure Antigravity (The final step)
-Copy this block into your `mcp_config.json` file (located at `%USERPROFILE%\.gemini\antigravity\mcp_config.json`). 
-**Remember to replace the path `C:/Path/To/Folder/` with the actual path on your PC.**
+### 4. Configure Antigravity (Add, don't overwrite!)
+Open your `mcp_config.json` file (located at `%USERPROFILE%\.gemini\antigravity\mcp_config.json`).
+**Add** the following `GoogleAds` block inside the `mcpServers` object. Do not delete your existing servers (like Meta Ads or others).
 
 ```json
-{
-  "mcpServers": {
-    "GoogleAds": {
-      "command": "uv",
-      "args": [
-        "run",
-        "--directory",
-        "C:/Path/To/Folder/Antigravity-google-ads-mcp-for-windows",
-        "-m",
-        "ads_mcp.server"
-      ],
-      "cwd": "C:/Path/To/Folder/Antigravity-google-ads-mcp-for-windows",
-      "timeout": 30000
-    }
-  }
+/* inside mcpServers: { ... } */
+"GoogleAds": {
+  "command": "uv",
+  "args": [
+    "run",
+    "--directory",
+    "C:/Path/To/Folder/Antigravity-google-ads-mcp-for-windows",
+    "-m",
+    "ads_mcp.server"
+  ],
+  "cwd": "C:/Path/To/Folder/Antigravity-google-ads-mcp-for-windows",
+  "timeout": 30000
 }
 ```
-*Tip: Use forward slashes `/` in the JSON file.*
+*Tip: Ensure you put a comma `,` between different server objects and use forward slashes `/`.*
 
 ---
 
@@ -118,29 +115,26 @@ Se l'agente dice che il comando non esiste:
 
 ---
 
-### 4. Configura Antigravity (Il pezzo finale)
-Copia questo blocco nel tuo file `mcp_config.json` (che si trova in `%USERPROFILE%\.gemini\antigravity\mcp_config.json`). 
-**Ricorda di cambiare il percorso `C:/Percorso/Alla/Cartella/` con quello reale sul tuo PC.**
+### 4. Configura Antigravity (Aggiungi, non sovrascrivere!)
+Apri il tuo file `mcp_config.json` (che si trova in `%USERPROFILE%\.gemini\antigravity\mcp_config.json`).
+**Aggiungi** il seguente blocco `GoogleAds` dentro l'oggetto `mcpServers`. Non cancellare i server esistenti (come Meta Ads o altri).
 
 ```json
-{
-  "mcpServers": {
-    "GoogleAds": {
-      "command": "uv",
-      "args": [
-        "run",
-        "--directory",
-        "C:/Percorso/Alla/Cartella/Antigravity-google-ads-mcp-for-windows",
-        "-m",
-        "ads_mcp.server"
-      ],
-      "cwd": "C:/Percorso/Alla/Cartella/Antigravity-google-ads-mcp-for-windows",
-      "timeout": 30000
-    }
-  }
+/* dentro mcpServers: { ... } */
+"GoogleAds": {
+  "command": "uv",
+  "args": [
+    "run",
+    "--directory",
+    "C:/Percorso/Alla/Cartella/Antigravity-google-ads-mcp-for-windows",
+    "-m",
+    "ads_mcp.server"
+  ],
+  "cwd": "C:/Percorso/Alla/Cartella/Antigravity-google-ads-mcp-for-windows",
+  "timeout": 30000
 }
 ```
-*Tip: Usa le slash in avanti `/` nel file JSON.*
+*Tip: Assicurati di mettere una virgola `,` tra i diversi server e usa le slash in avanti `/`.*
 
 ---
 
