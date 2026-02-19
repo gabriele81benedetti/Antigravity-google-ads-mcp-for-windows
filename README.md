@@ -64,11 +64,11 @@ For security reasons, this repository **DOES NOT** include access credentials. Y
 5.  **Developer Token**: Copy it from your Google Ads Manager (MCC) account -> Tools & Settings -> API Center.
 
 ### 2. Generate the Refresh Token
-Run in your terminal:
-```bash
-uv run get_refresh_token.py
-```
-Follow the on-screen instructions to authenticate and obtain your `refresh_token`.
+Antigravity can do this for you!
+1. Make sure `client_secrets.json` is in the folder.
+2. In the AI chat, ask/wait for the step: `uv run get_refresh_token.py -c client_secrets.json`.
+3. A URL will be printed. Click it, log in to your Google account, and click "Allow".
+4. The script will automatically capture the token and print it in the chat.
 
 ### 3. Create the `google-ads.yaml` file
 Rename `google-ads.yaml.example` to `google-ads.yaml` and fill in the fields:
@@ -154,11 +154,11 @@ Per motivi di sicurezza, questo repository **NON** include le credenziali di acc
 5.  **Developer Token**: Copialo dal tuo account Google Ads Manager (MCC) -> Strumenti -> Centro API.
 
 ### 2. Genera il Refresh Token
-Esegui nel terminale:
-```bash
-uv run get_refresh_token.py
-```
-Segui le istruzioni a video per ottenere il `refresh_token`.
+Antigravity può farlo per te!
+1. Assicurati che `client_secrets.json` sia nella cartella.
+2. Nella chat AI, chiedi o aspetta lo step: `uv run get_refresh_token.py -c client_secrets.json`.
+3. Verrà stampato un URL. Cliccaci, accedi al tuo account Google e clicca su "Consenti".
+4. Lo script catturerà automaticamente il token e lo stamperà nella chat.
 
 ### 3. Crea il file `google-ads.yaml`
 Rinomina `google-ads.yaml.example` in `google-ads.yaml` e riempi i campi:
